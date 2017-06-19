@@ -7,10 +7,10 @@ import optparse
 from threading import Thread
 def extractFile(zFile, password):
     try:
-        zFile.extractall(pwd=password)
+		#3.x 版本必须加上.encode('ascii')，3.x版本不能自动支持ascii码了
+        zFile.extractall(pwd=password.encode('ascii'))
         print("[+] Found password " + password + "\n")
     except:
-        print("[-] Found password " + password + "\n")
         pass
 def main():
     parser = optparse.OptionParser("usage%prog " + "-f <zipfile> -d <dictionary>")
