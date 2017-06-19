@@ -1,3 +1,7 @@
+# coding=UTF-8
+"""
+用字典暴力破解ZIP压缩文件密码
+"""
 import zipfile
 import optparse
 from threading import Thread
